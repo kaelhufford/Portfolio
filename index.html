@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Kael Hufford | Portfolio</title>
+	<style>
+		body {
+			background-color: #0d1117;
+			color: #c9d1d9;
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			line-height: 1.6;
+		}
+		header {
+			background-color: #161b22;
+			padding: 4rem 2rem;
+			text-align: center;
+			border-bottom: 1px solid #30363d;
+		}
+		h1 {
+			color: #58a6ff;
+			margin-bottom: 0.5rem;
+		}
+		h2 {
+			color: #8b949e;
+			font-weight: 400;
+		}
+		.container {
+			max-width: 900px;
+			margin: 0 auto;
+			padding: 2rem;
+		}
+		section {
+			margin-bottom: 3rem;
+		}
+		.project-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 1.5rem;
+			margin-top: 2rem;
+		}
+		.card {
+			background-color: #161b22;
+			border: 1px solid #30363d;
+			border-radius: 6px;
+			padding: 1.5rem;
+			transition: transform 0.2s;
+			display: flex;
+			flex-direction: column;
+		}
+		.card:hover {
+			transform: translateY(-5px);
+			border-color: #58a6ff;
+		}
+		.card h3 {
+			margin-top: 0;
+			color: #58a6ff;
+			margin-bottom: 0.25rem;
+		}
+		.date {
+			font-size: 0.85rem;
+			color: #8b949e;
+			margin-bottom: 1rem;
+		}
+		.tag {
+			display: inline-block;
+			background-color: #238636;
+			color: #ffffff;
+			font-size: 0.75rem;
+			padding: 0.2em 0.5em;
+			border-radius: 12px;
+			margin-right: 0.5rem;
+			margin-bottom: 1rem;
+		}
+		a {
+			color: #58a6ff;
+			text-decoration: none;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+		.skills-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			gap: 1.5rem;
+			margin-top: 2rem;
+		}
+		.skills-list {
+			list-style-type: none;
+			padding: 0;
+		}
+		.skills-list li {
+			background: #161b22;
+			margin-bottom: 0.5rem;
+			padding: 0.5rem 1rem;
+			border-radius: 4px;
+			border: 1px solid #30363d;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Kael Hufford</h1>
+		<h2>Software Engineering & Information Management</h2>
+	</header>
+	
+	<div class="container">
+		<section>
+			<h2>About Me</h2>
+			<p>I am a software engineer and independent game developer with a focus on systems architecture, gameplay programming, and custom multiplayer server environments.</p>
+		</section>
+
+		<section>
+			<h2>Skills</h2>
+			<div class="skills-grid">
+				<div>
+					<h3>Programming Languages</h3>
+					<ul class="skills-list">
+						<li>Java</li>
+						<li>Python</li>
+						<li>GDScript</li>
+						<li>SQL</li>
+					</ul>
+				</div>
+				<div>
+					<h3>Tools & Frameworks</h3>
+					<ul class="skills-list">
+						<li>Spigot API</li>
+						<li>MySQL</li>
+						<li>Godot</li>
+						<li>Gemini API</li>
+						<li>Git</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section>
+			<h2>Portfolio</h2>
+			<div class="project-grid">
+				
+				<div class="card">
+					<h3>Tubular Tides</h3>
+					<div class="date">12/25 - Present</div>
+					<p><strong>Co-Lead Developer and Project Manager</strong></p>
+					<p>Designed several in-editor workflows to accelerate content creation and reduce manual effort, ensuring all systems are reusable and modular.</p>
+				</div>
+
+				<div class="card">
+					<h3>The Loop</h3>
+					<div class="date">2/26 - 3/26</div>
+					<p><strong>Minecraft Spigot Plugin</strong></p>
+					<p>Used an iterative development process and AI (Gemini) proficiently to speed up development and craft a unique player experience for a large Minecraft plugin.</p>
+					<p><a href="https://github.com/kaelhufford/Stiggles_Looped" target="_blank">View on GitHub</a></p>
+				</div>
+				
+				<div class="card">
+					<h3>The Convergence</h3>
+					<div class="date">9/22 - 9/23</div>
+					<p><strong>Minecraft Spigot Plugin (Co-Developed)</strong></p>
+					<p>Designed and developed a full stack server plugin featuring modular gameplay systems and a custom SQL database integration. Achieved 51 unique players and over 6,500 hours of play time.</p>
+					<p><a href="https://github.com/kstigelman/TheConvergence" target="_blank">View on GitHub</a></p>
+				</div>
+
+				<div class="card">
+					<h3>TT-Leak-Project</h3>
+					<p><strong>Godot Game Project</strong></p>
+					<p>Code repository for TT-Leak-Project.</p>
+					<p><a href="https://github.com/kaelhufford/TT-Leak-Project" target="_blank">View on GitHub</a></p>
+				</div>
+				
+			</div>
+		</section>
+	</div>
+</body>
+</html>
