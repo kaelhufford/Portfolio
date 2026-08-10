@@ -7,13 +7,17 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Subtle CRT Scanline Overlay -->
+    <div class="scanlines"></div>
+
 	<div class="layout">
+		<!-- LEFT SIDE: About Me & Info -->
 		<header>
 			<h1>Kael Hufford</h1>
 			<h2 class="subtitle">Software Engineering & Information Management</h2>
 			
 			<div class="about">
-				<p>I am a software engineer and independent game developer with a focus on systems architecture, gameplay programming, and custom multiplayer server environments. I specialize in building modular systems, managing cross-functional development teams to deliver high-quality, scalable software, and have leveraged AI for rapid prototyping.</p>
+				<p>I am a software engineer and independent game developer with a focus on systems architecture, gameplay programming, and custom multiplayer server environments. I specialize in building modular systems, managing cross functional development teams to deliver high quality, scalable software, and have leveraged AI for rapid prototyping.</p>
 			</div>
 
 			<div class="skills">
@@ -26,17 +30,17 @@
 			</div>
 
 			<div class="skills" style="margin-top: 2rem;">
-				<h3 class="section-title">Core Technologies</h3>
-				<ul class="skills-list">
-					<li>Java</li>
-					<li>Python</li>
-					<li>GDScript</li>
-					<li>SQL</li>
-					<li>Spigot API</li>
-					<li>MySQL</li>
-					<li>Godot</li>
-					<li>Gemini API</li>
-					<li>Git & GitHub</li>
+				<h3 class="section-title">Core Technologies <span style="font-size: 0.6rem; color: var(--accent);">(CLICK TO FILTER)</span></h3>
+				<ul class="skills-list" id="tag-filters">
+					<li class="filter-tag" data-filter="JAVA">Java</li>
+					<li class="filter-tag" data-filter="PYTHON">Python</li>
+					<li class="filter-tag" data-filter="GDSCRIPT">GDScript</li>
+					<li class="filter-tag" data-filter="SQL">SQL</li>
+					<li class="filter-tag" data-filter="SPIGOT API">Spigot API</li>
+					<li class="filter-tag" data-filter="MYSQL">MySQL</li>
+					<li class="filter-tag" data-filter="GODOT">Godot</li>
+					<li class="filter-tag" data-filter="GEMINI API">Gemini API</li>
+					<li class="filter-tag" data-filter="NODE.JS">Node.js</li>
 				</ul>
 			</div>
 
@@ -51,6 +55,19 @@
 				</ul>
 			</div>
 
+			<div class="skills" style="margin-top: 2rem;">
+				<h3 class="section-title">GitHub Activity</h3>
+				<a href="https://github.com/kaelhufford" target="_blank" style="display: block; text-decoration: none;">
+					<img 
+						src="https://streak-stats.demolab.com/?user=kaelhufford&theme=transparent&hide_border=true&title_color=00f2ff&icon_color=00f2ff&text_color=d1d5db" 
+						alt="Kael's GitHub Stats" 
+						style="width: 100%; border: 1px solid var(--border); border-radius: 6px; background-color: var(--module-bg); transition: border-color 0.2s; pointer-events: auto;"
+						onmouseover="this.style.borderColor='var(--accent)'" 
+						onmouseout="this.style.borderColor='var(--border)'"
+					/>
+				</a>
+			</div>
+
 			<div class="contact" style="margin-top: 3rem; border-top: 1px solid var(--border); padding-top: 1.5rem;">
 				<h3 class="section-title">Contact</h3>
 				<div style="display: flex; flex-direction: column; gap: 0.75rem; font-family: 'Courier New', Courier, monospace; font-size: 0.9rem;">
@@ -61,132 +78,182 @@
 			</div>
 		</header>
 
+		<!-- RIGHT SIDE: Split Top (Canvas) and Bottom (Projects) -->
 		<main>
-			<h3 class="section-title">Dev Portfolio</h3>
-			
-			<div class="module-box">
-				<div class="module-bar">
-					<span>MOD_01 // TUBULAR_TIDES</span>
-					<span class="status">[ACTIVE_DEV]</span>
-				</div>
-				<div class="module-content">
-					<div class="project-header">
-						<h3 class="project-title">Tubular Tides</h3>
-						<div class="project-meta">
-							<span>Co-Lead Developer and Project Manager</span>
-							<span class="project-date">12/25 - Present</span>
-						</div>
-						<div class="tags">
-							<span class="tag">Godot</span>
-							<span class="tag">GDScript</span>
-							<span class="tag">Git</span>
-							<span class="tag">Project Management</span>
-						</div>
-					</div>
-					<p>Leading a cross-functional, four-person agile development team to architect and build a low-poly ocean strategy and exploration game. Responsible for core systems architecture utilizing the Godot engine and GDScript, while establishing strict version control protocols using GitHub.</p>
-					<p>To optimize the team's production pipeline, I engineered and designed highly modular, reusable in-editor workflows that significantly accelerated content creation and reduced manual effort for our modelers and level designers. Beyond technical implementation, I oversee project timelines, delegate cross-disciplinary tasks, and manage overall software stability leading up to successful closed playtests.</p>
-				</div>
+			<!-- TOP HALF: Floating Nodes -->
+			<div id="top-half">
+				<!-- Canvas is injected here via script.js -->
 			</div>
 
-			<div class="module-box">
-				<div class="module-bar">
-					<span>MOD_02 // TT_LEAK_PROJECT</span>
-					<span class="status">[DEPLOYED]</span>
-				</div>
-				<div class="module-content">
-					<div class="project-header">
-						<h3 class="project-title">Interactive Server ARG (TT-Leak)</h3>
-						<div class="project-meta">
-							<span>Backend Developer / Systems Engineer</span>
-							<span class="project-date">4/26 - 5/26</span>
-						</div>
-						<div class="tags">
-							<span class="tag">Node.js</span>
-							<span class="tag">Socket.io</span>
-							<span class="tag">SSH Server</span>
-							<span class="tag">DigitalOcean</span>
-							<span class="tag">AI Tooling (Gemini)</span>
-						</div>
-					</div>
-					<p>Architected and deployed a highly interactive, simulated terminal console to run a community-driven Alternate Reality Game (ARG) requiring collaborative effort to assemble ciphers. Engineered a robust custom Node.js backend capable of concurrently serving an Express/Socket.io web interface alongside a secure, dedicated SSH server utilizing the ssh2 library.</p>
-					<p>Developed complex internal backend infrastructure including IP-based rate limiting, dynamic session handling, a custom command parsing registry, and an interactive virtual filesystem to serve localized puzzle fragments. Proficiently leveraged AI tooling to rapidly prototype the server logic. Handled all DevOps responsibilities, successfully deploying, configuring, and managing the live production environment on a DigitalOcean Droplet.</p>
-					<a href="https://github.com/kaelhufford/TT-Leak-Project" class="project-link" target="_blank">View Repository &rarr;</a>
-				</div>
-			</div>
+			<!-- BOTTOM HALF: Project Display -->
+			<div id="bottom-half">
+                
+                <!-- Theme Control Switch -->
+                <div id="theme-controls">
+                    <span style="color: var(--text-muted); font-size: 0.75rem; font-family: 'Courier New', monospace;">&gt; OVERRIDE_FREQ:</span>
+                    <button class="theme-toggle-btn" id="theme-btn">[ CYBER_CYAN ]</button>
+                </div>
 
-			<div class="module-box">
-				<div class="module-bar">
-					<span>MOD_03 // THE_LOOP</span>
-					<span class="status">[ARCHIVED]</span>
-				</div>
-				<div class="module-content">
-					<div class="project-header">
-						<h3 class="project-title">The Loop</h3>
-						<div class="project-meta">
-							<span>Solo Java Developer</span>
-							<span class="project-date">2/26 - 3/26</span>
-						</div>
-						<div class="tags">
-							<span class="tag">Java</span>
-							<span class="tag">Spigot API</span>
-							<span class="tag">AI Tooling (Gemini)</span>
-						</div>
+				<!-- Idle Screensaver State -->
+				<div id="default-state">
+					<div class="idle-header">
+						<span style="color: var(--accent);">[ WAITING_FOR_INPUT ]</span><br><br>
+						Interact with a node above to load project data.
 					</div>
-					<p>Engineered a large-scale, feature-rich Minecraft plugin focused on delivering a highly unique and customized player experience. Applied strict iterative development methodologies to efficiently manage the project's growing scope and ensure consistent, bug-free feature delivery.</p>
-					<p>Proficiently leveraged AI-assisted tooling (Gemini API) as a pair-programmer to rapidly prototype complex Java logic, troubleshoot edge cases, and significantly expedite the overall software development lifecycle of the massive plugin architecture.</p>
-					<a href="https://github.com/kaelhufford/Stiggles_Looped" class="project-link" target="_blank">View Repository &rarr;</a>
+					<div id="idle-feed">
+						<!-- JS injects the faded timeline items here -->
+					</div>
 				</div>
-			</div>
 
-			<div class="module-box">
-				<div class="module-bar">
-					<span>MOD_04 // STIGGLES_ADVENTURE</span>
-					<span class="status">[ARCHIVED]</span>
-				</div>
-				<div class="module-content">
-					<div class="project-header">
-						<h3 class="project-title">Stiggles-Adventure</h3>
-						<div class="project-meta">
-							<span>AI Systems Engineer</span>
-							<span class="project-date">TBD - TBD</span>
+				<div class="module-box" id="mod-1" data-label="TUBULAR_TIDES_CORE" data-sub="GODOT / GDScript" data-rel="ENGINE" data-date="12/25 - Present" data-status="active" data-summary="Leading an agile team to architect and build a low poly ocean strategy game in Godot.">
+                    <div class="module-bar">
+                        <span>MOD_01 // TUBULAR_TIDES</span>
+                        <span class="status">[ACTIVE_DEV]</span>
+                    </div>
+					<div class="module-content">
+						<div class="project-header">
+							<h3 class="project-title">Tubular Tides</h3>
+							<div class="project-meta">
+								<span>Co Lead Developer and Project Manager</span>
+								<span class="project-date">12/25 - Present</span>
+							</div>
+							<div class="tags">
+								<span class="tag">Godot</span>
+								<span class="tag">GDScript</span>
+								<span class="tag">Git</span>
+								<span class="tag">Project Management</span>
+							</div>
 						</div>
-						<div class="tags">
-							<span class="tag">Java</span>
-							<span class="tag">Spigot API</span>
-							<span class="tag">Gemini API</span>
-							<span class="tag">Citizens API</span>
-						</div>
+						<p>Leading a cross functional, four person agile development team to architect and build a low poly ocean strategy and exploration game. Responsible for core systems architecture utilizing the Godot engine and GDScript, while establishing strict version control protocols using GitHub.</p>
+						<p>To optimize the team's production pipeline, I engineered and designed highly modular, reusable in editor workflows that significantly accelerated content creation and reduced manual effort for our modelers and level designers. Beyond technical implementation, I oversee project timelines, delegate cross disciplinary tasks, and manage overall software stability leading up to successful closed playtests.</p>
+						<a href="https://store.steampowered.com/app/4637520/Tubular_Tides/" class="project-link" target="_blank">View On Steam &rarr;</a>
 					</div>
-					<p>Engineered a complex, AI-driven interactive NPC system for a custom Minecraft adventure environment using Java and the Spigot API. Integrated the Gemini API to generate dynamic, contextual dialogue that responds in real-time to in-game variables like a player's health, inventory, and semantic time of day.</p>
-					<p>To deepen immersion, I architected a custom two-step execution loop that allows the AI to autonomously gather environmental data—such as scanning a 5-block radius for specific block types—before formulating its final response. I also developed a robust parsing engine using asynchronous tasks to translate AI text outputs into synchronized physical actions, enabling the NPC to independently pathfind to dynamic locations, play sounds, manage a persistent moral state, and physically react to players without blocking the main server thread.</p>
-					<a href="https://github.com/kaelhufford/Stiggles-Adventure" class="project-link" target="_blank">View Repository &rarr;</a>
 				</div>
-			</div>
 
-			<div class="module-box">
-				<div class="module-bar">
-					<span>MOD_05 // THE_CONVERGENCE</span>
-					<span class="status">[ARCHIVED]</span>
-				</div>
-				<div class="module-content">
-					<div class="project-header">
-						<h3 class="project-title">The Convergence</h3>
-						<div class="project-meta">
-							<span>Full-Stack Plugin Engineer (Co-Developed)</span>
-							<span class="project-date">9/22 - 9/23</span>
-						</div>
-						<div class="tags">
-							<span class="tag">Java</span>
-							<span class="tag">Spigot API</span>
-							<span class="tag">MySQL</span>
-						</div>
+				<div class="module-box" id="mod-2" data-label="TT_LEAK_SSH_SRV" data-sub="NODE.JS / DIGITALOCEAN" data-rel="BACKEND" data-date="4/26 - 5/26" data-status="active" data-summary="Architected a custom Node.js backend and interactive terminal ARG with AI tooling.">
+					<div class="module-bar">
+						<span>MOD_02 // TT_LEAK_PROJECT</span>
+						<span class="status">[DEPLOYED]</span>
 					</div>
-					<p>Designed and engineered a comprehensive, full-stack multiplayer server plugin utilizing Java and the Spigot API. Architected a robust custom SQL database integration to persistently track complex player data, economic metrics, and modular gameplay systems across a live environment.</p>
-					<p>Successfully managed and maintained the server infrastructure, demonstrating strong system stability by supporting 51 unique concurrent/total players and accumulating over 6,500 hours of tracked total playtime.</p>
-					<a href="https://github.com/kstigelman/TheConvergence" class="project-link" target="_blank">View Repository &rarr;</a>
+					<div class="module-content">
+						<div class="project-header">
+							<h3 class="project-title">Interactive Server ARG (TT Leak)</h3>
+							<div class="project-meta">
+								<span>Backend Developer / Systems Engineer</span>
+								<span class="project-date">4/26 - 5/26</span>
+							</div>
+							<div class="tags">
+								<span class="tag">Node.js</span>
+								<span class="tag">Socket.io</span>
+								<span class="tag">SSH Server</span>
+								<span class="tag">DigitalOcean</span>
+								<span class="tag">AI Tooling (Gemini)</span>
+							</div>
+						</div>
+						<p>Architected and deployed a highly interactive, simulated terminal console to run a community driven Alternate Reality Game (ARG) requiring collaborative effort to assemble ciphers. Engineered a robust custom Node.js backend capable of concurrently serving an Express/Socket.io web interface alongside a secure, dedicated SSH server utilizing the ssh2 library.</p>
+						<p>Developed complex internal backend infrastructure including IP based rate limiting, dynamic session handling, a custom command parsing registry, and an interactive virtual filesystem to serve localized puzzle fragments. Proficiently leveraged AI tooling to rapidly prototype the server logic. Handled all DevOps responsibilities, successfully deploying, configuring, and managing the live production environment on a DigitalOcean Droplet.</p>
+						<a href="https://github.com/kaelhufford/TT-Leak-Project" class="project-link" target="_blank">View Repository &rarr;</a>
+					</div>
+				</div>
+
+				<div class="module-box" id="mod-3" data-label="THE_LOOP_PLUGIN" data-sub="JAVA / SPIGOT" data-rel="SYSTEM" data-date="2/26 - 3/26" data-status="archived" data-summary="Engineered a feature rich, large scale Minecraft Spigot plugin utilizing AI pair programming.">
+					<div class="module-bar">
+						<span>MOD_03 // THE_LOOP</span>
+						<span class="status">[ARCHIVED]</span>
+					</div>
+					<div class="module-content">
+						<div class="project-header">
+							<h3 class="project-title">The Loop</h3>
+							<div class="project-meta">
+								<span>Solo Java Developer</span>
+								<span class="project-date">2/26 - 3/26</span>
+							</div>
+							<div class="tags">
+								<span class="tag">Java</span>
+								<span class="tag">Spigot API</span>
+								<span class="tag">AI Tooling (Gemini)</span>
+							</div>
+						</div>
+						<p>Engineered a large scale, feature rich Minecraft plugin focused on delivering a highly unique and customized player experience. Applied strict iterative development methodologies to efficiently manage the project's growing scope and ensure consistent, bug free feature delivery.</p>
+						<p>Proficiently leveraged AI assisted tooling (Gemini API) as a pair programmer to rapidly prototype complex Java logic, troubleshoot edge cases, and significantly expedite the overall software development lifecycle of the massive plugin architecture.</p>
+						<a href="https://github.com/kaelhufford/Stiggles_Looped" class="project-link" target="_blank">View Repository &rarr;</a>
+					</div>
+				</div>
+
+				<div class="module-box" id="mod-4" data-label="STIGGLES_ADVENTURE" data-sub="SPIGOT / GEMINI API" data-rel="AI PLUGIN" data-date="2024 - Present" data-status="archived" data-summary="Developed a complex, AI driven interactive NPC system for Minecraft using the Gemini API.">
+					<div class="module-bar">
+						<span>MOD_04 // STIGGLES_ADVENTURE</span>
+						<span class="status">[ARCHIVED]</span>
+					</div>
+					<div class="module-content">
+						<div class="project-header">
+							<h3 class="project-title">Stiggles Adventure</h3>
+							<div class="project-meta">
+								<span>AI Systems Engineer</span>
+								<span class="project-date">2024 - Present</span>
+							</div>
+							<div class="tags">
+								<span class="tag">Java</span>
+								<span class="tag">Spigot API</span>
+								<span class="tag">Gemini API</span>
+								<span class="tag">Citizens API</span>
+							</div>
+						</div>
+						<p>Engineered a complex, AI driven interactive NPC system for a custom Minecraft adventure environment using Java and the Spigot API. Integrated the Gemini API to generate dynamic, contextual dialogue that responds in real time to in game variables like a player's health, inventory, and semantic time of day.</p>
+						<p>To deepen immersion, I architected a custom two step execution loop that allows the AI to autonomously gather environmental data, such as scanning a 5 block radius for specific block types, before formulating its final response. I also developed a robust parsing engine using asynchronous tasks to translate AI text outputs into synchronized physical actions, enabling the NPC to independently pathfind to dynamic locations, play sounds, manage a persistent moral state, and physically react to players without blocking the main server thread.</p>
+						<a href="https://github.com/kaelhufford/Stiggles-Adventure" class="project-link" target="_blank">View Repository &rarr;</a>
+					</div>
+				</div>
+
+				<div class="module-box" id="mod-5" data-label="THE_CONVERGENCE" data-sub="JAVA / MYSQL" data-rel="FULL-STACK" data-date="9/22 - 9/23" data-status="archived" data-summary="Designed a full stack multiplayer server plugin with custom SQL database integration.">
+					<div class="module-bar">
+						<span>MOD_05 // THE_CONVERGENCE</span>
+						<span class="status">[ARCHIVED]</span>
+					</div>
+					<div class="module-content">
+						<div class="project-header">
+							<h3 class="project-title">The Convergence</h3>
+							<div class="project-meta">
+								<span>Full Stack Plugin Engineer (Co Developed)</span>
+								<span class="project-date">9/22 - 9/23</span>
+							</div>
+							<div class="tags">
+								<span class="tag">Java</span>
+								<span class="tag">Spigot API</span>
+								<span class="tag">MySQL</span>
+							</div>
+						</div>
+						<p>Designed and engineered a comprehensive, full stack multiplayer server plugin utilizing Java and the Spigot API. Architected a robust custom SQL database integration to persistently track complex player data, economic metrics, and modular gameplay systems across a live environment.</p>
+						<p>Successfully managed and maintained the server infrastructure, demonstrating strong system stability by supporting 51 unique concurrent/total players and accumulating over 6,500 hours of tracked total playtime.</p>
+						<a href="https://github.com/kstigelman/TheConvergence" class="project-link" target="_blank">View Repository &rarr;</a>
+					</div>
+				</div>
+
+				<div class="module-box" id="mod-6" data-label="PYTHON_SURVIVAL" data-sub="PYTHON / TERMINAL" data-rel="ACADEMIC" data-date="8/25 - 5/26" data-status="archived" data-summary="Developed a text based survival adventure game in Python featuring daily randomized events.">
+					<div class="module-bar">
+						<span>MOD_06 // PYTHON_SURVIVAL</span>
+						<span class="status">[ARCHIVED]</span>
+					</div>
+					<div class="module-content">
+						<div class="project-header">
+							<h3 class="project-title">Python Survival</h3>
+							<div class="project-meta">
+								<span>Solo Developer (Freshman Project)</span>
+								<span class="project-date">8/25 - 5/26</span>
+							</div>
+							<div class="tags">
+								<span class="tag">Python</span>
+							</div>
+						</div>
+						<p>Developed a text based survival adventure game in Python as a foundational Freshman Project. Engineered the core game loop, including daily randomized weather systems, distinct random events like flash floods or wolf attacks, and a structured 5 day cycle progression system.</p>
+						<p>Implemented underlying data structures using Python dictionaries to manage player statistics, inventory slots, and crafting material tracking. Built an interactive terminal menu system utilizing match case logic, which actively allows players to hunt, craft tools like spears and campfires, and safely trade with merchants to survive the wilderness simulation.</p>
+						<a href="https://github.com/kaelhufford/Python-Survival" class="project-link" target="_blank">View Repository &rarr;</a>
+					</div>
 				</div>
 			</div>
 		</main>
 	</div>
+
+	<script src="script.js"></script>
 </body>
 </html>
